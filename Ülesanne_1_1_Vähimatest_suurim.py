@@ -25,13 +25,13 @@ Näide:
 >>> vahimatest_suurim([[0], [1], [2], [3], [-1]])
 3
 """
-def vahimatest_suurim(A):
+def vahimatest_suurim(maatriks):
     # võtame esimese rea väikseima võrdluse aluseks:
-    maxsmallest = min(A[0])
+    maxsmallest = min(maatriks[0])
     # leiame iga rea vähima ja võrdleme neid senise vähimaga
-    for row in A:
-        smallest=min(row)
-        if smallest>maxsmallest:
+    for row in maatriks:
+        smallest = min(row)
+        if smallest > maxsmallest:
             maxsmallest = smallest
     return maxsmallest
 
