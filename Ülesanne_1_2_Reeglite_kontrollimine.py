@@ -43,7 +43,22 @@ def on_bingo_tabel(table):
     for j in range(5):
         for i in range(5):
             if (j * 15 + 1) <= table[i][j] <= ((j + 1) * 15):
-                s = 1
+                continue
+            else:
+                result = False
+    return result
+
+def on_bingo_tabel_extra(table):
+    result = True
+    bingo = []
+    for j in range(5):
+        for i in range(5):
+            if table[i][j] in bingo:
+                return False
+            else:
+                bingo.append(table[i][j])
+            if (j * 15 + 1) <= table[i][j] <= ((j + 1) * 15):
+                continue
             else:
                 result = False
     return result
@@ -67,3 +82,8 @@ tableB = [
 
 print(on_bingo_tabel(tableA))
 print(on_bingo_tabel(tableB))
+
+print("Extra:")
+print(on_bingo_tabel_extra(tableA))
+print(on_bingo_tabel_extra(tableB))
+
