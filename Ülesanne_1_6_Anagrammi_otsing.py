@@ -12,19 +12,28 @@ Kui vasakul või paremal elementi ei leidu, siis tuleb seda arvestada tühja sõ
 
 Kontrollitakse vaid funktsiooni definitsiooni, programmis seda rakendama ei pea.
 
-Näide:
-
->>> leidub_anagramm([['ab', 'ba']])
-True
-
->>> leidub_anagramm([['ab', 'cad', 'cd'], ['abd', 'a', 'bd']])
-False
-
->>> leidub_anagramm([['ab', 'cad', 'cd'], ['a', 'bad', 'bd']])
-True
-
-Vihje:
-Mis tingimus on piisav selleks, et kaks sõne oleksid teineteise anagrammid? Pange tähele, et sõned koosnevad vaid
-neljast erinevast märgist.
 """
-# loeme võrreldavates sõnades üle tähed a,b,c,d ja kui need on võrdsed, on tegemist anagrammiga.
+def leidub_anagramm(matrix):
+# käime matrixi üksipulki läbi:
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            testString = ""
+            if j > 0:
+                testString += matrix[i][j - 1]
+            if j < len(matrix[i]) - 1:
+                testString += matrix[i][j + 1]
+            # kasutame sorted() meetodit, et elemendid oleksid tähestikulises järjekorras, 1:1 võrreldavad
+            if sorted(testString) == sorted(matrix[i][j]):
+                return True
+    return False
+
+print(([['karuperse', 'persekaru']]))
+print(leidub_anagramm([['karuperse', 'persekaru']]))
+print(([['karuperse', 'persekarv']]))
+print(leidub_anagramm([['karuperse', 'persekarv']]))
+
+
+
+
+
+
