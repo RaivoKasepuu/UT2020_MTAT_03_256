@@ -31,9 +31,3 @@ print(([['karuperse', 'persekaru']]))
 print(leidub_anagramm([['karuperse', 'persekaru']]))
 print(([['karuperse', 'persekarv']]))
 print(leidub_anagramm([['karuperse', 'persekarv']]))
-
-
-
-
-
-
