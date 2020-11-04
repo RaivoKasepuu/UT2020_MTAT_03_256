@@ -24,7 +24,7 @@ Kontrollitakse vaid funktsioonide definitsioone, programmis neid rakendama ei pe
 def absoluutne_tabel(matrix):
     result = []
     for i in range((len(matrix))):
-        row=[]
+        row = []
         for j in range((len(matrix[i]))):
             row.append(abs(matrix[i][j]))
         result.append(row)
